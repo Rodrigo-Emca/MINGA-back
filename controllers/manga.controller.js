@@ -72,6 +72,7 @@ const controller = {
           mangas: {
             title: one.title, 
             decription: one.description, 
+            cover_photo: one.cover_photo,
             category: one.category}})
     }
     catch(err) {

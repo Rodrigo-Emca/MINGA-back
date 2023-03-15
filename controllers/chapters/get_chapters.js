@@ -21,8 +21,8 @@ const controller = {
                 const datosImportantes = [];
                 
                 arr.forEach(obj => {
-                    const { order, title, cover_photo, pages } = obj;
-                    datosImportantes.push({ order, title, cover_photo, pages });
+                    const { _id, order, title, cover_photo, pages } = obj;
+                    datosImportantes.push({ _id, order, title, cover_photo, pages });
                 });
                 return datosImportantes;
                 }

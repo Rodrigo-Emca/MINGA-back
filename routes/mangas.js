@@ -17,7 +17,7 @@ router.get("/", show)
 //router.post("/", validator(mangaCreate),validator_title,is_active,create) //RUTA CON VALIDADOR DEL M06
 router.post("/", validator(schema),validator_title,create)
 router.get('/read', get_mangas)
-router.get('/:id', get_one)
+router.get('/:_id', get_one)
 
 export default router;
 
