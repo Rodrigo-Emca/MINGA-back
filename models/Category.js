@@ -2,11 +2,9 @@ import mongoose from "mongoose";
 
 let schema = new mongoose.Schema(
     {
-        name: {type: String, required: true},
-        detail: {type: String},
-        admin_id: {type: String, required: true},
-    },
-    {
+        name: { type: String, required: true },
+        detail: { type: String, required: true }
+    },{
         timestamps: true
     }
 )
