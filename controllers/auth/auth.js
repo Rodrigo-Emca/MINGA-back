@@ -69,17 +69,17 @@ const controller = {
         }
         },
 
-    token: async (req, res, next) => {
-        let { user } = req
-        try {
-            req.body.success = true
-            req.body.sc = 200
-            req.body.data = { user }
-            return res.status(200).json(user)
-        } catch (error) {
-            next(error)
-        }
-    },
+        token: async (req, res, next) => {
+            let { user } = req
+            try {
+                req.body.success = true
+                req.body.sc = 200
+                req.body.data = { user }
+                return res.status(200).json(user)
+            } catch (error) {
+                next(error)
+            }
+        },
 }
 
 
