@@ -35,9 +35,8 @@ const controller = {
     }
 
     if (req.query.category_id) {
-        //consultas['category_id.name'] = req.query.category_id
-        const categ = req.query.category_id.split(',');//con split lo captura por comas, y se transforma en un array
-        consultas.category_id = {$in:categ}// ahora valida si existe, crea un objeto, si existe en la consulta la devuelve
+        const categ = req.query.category_id.split(',');
+        consultas.category_id = {$in:categ}
         pagination.limit = 10
     } 
  
@@ -48,12 +47,12 @@ const controller = {
       pagination.limit = req.query.quantity
     }
     try {
-      let all = await Manga.find(consultas)//consultas es un objeto al que mas arriba se le aplican condicionales
+      let all = await Manga.find(consultas)
       .select('title category_id cover_photo')
       .sort({ title: 1})  
-      .skip( pagination.page > 0 ? (pagination.page-1)*pagination.limit : 0 )//.skip--corta desde donde
-      .limit( pagination.limit > 0 ? pagination.limit : 0 )//hasta donde
-      .populate("category_id", "name -_id")//accede al name de la categoria
+      .skip( pagination.page > 0 ? (pagination.page-1)*pagination.limit : 0 )
+      .limit( pagination.limit > 0 ? pagination.limit : 0 )
+      .populate("category_id", "name -_id")
       
      /*  populate({
         path: 'category_id',
@@ -76,7 +75,3 @@ const controller = {
 }
 
 export default controller
-
-//http://localhost:8000/mangas/read?title= a &category_id=640a29d5aa914d6b7c5846e9 // ok anda
-// http://localhost:8000/mangas/read?title=a&category_id=640a29d5aa914d6b7c5846e9,640a29d5aa914d6b7c5846ec //ok anda
-
