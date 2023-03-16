@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const schema = new mongoose.Schema(
+let schema = new mongoose.Schema(
     {
         name: { type: String, required: true },
         detail: { type: String, required: true }
@@ -9,5 +9,5 @@ const schema = new mongoose.Schema(
     }
 )
 
-const Category = mongoose.model('categories', schema)
+let Category = mongoose.model("categories", schema)
 export default Category

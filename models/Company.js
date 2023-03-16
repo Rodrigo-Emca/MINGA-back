@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
-const schema = new mongoose.Schema(
+let schema = new mongoose.Schema(
+
     {
         name: { type: String, required: true },
         logo: { type: String, required: true },
@@ -12,5 +13,5 @@ const schema = new mongoose.Schema(
     }
 )
 
-const Company = mongoose.model('companies', schema)
-export default Company
+
+export const Company = mongoose.model('companies',schema)

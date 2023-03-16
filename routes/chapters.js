@@ -9,6 +9,11 @@ import is_property_of from '../middlewares/authors/is_property_of.js'
 import addFrontPhoto from '../middlewares/chapters/add_front_photo.js';
 import passport from '../middlewares/auth/passport.js';
 import is_active from '../middlewares/auth/is_active.js'
+import { get } from 'mongoose';
+
+import getchapters from '../controllers/chapters/get_chapters.js'
+const { get_chapters } = getchapters
+
 let router = express.Router();
 
 router.get('/:id', controllerChapter.chapter)

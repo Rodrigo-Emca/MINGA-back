@@ -62,4 +62,6 @@ router.post('/signout',
   sign_out
 )
 
+router.post('/token', passport.authenticate('jwt',{session:false}),token)
+
 export default router
