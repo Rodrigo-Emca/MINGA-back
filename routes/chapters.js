@@ -18,5 +18,4 @@ let router = express.Router();
 router.post('/',/*passport.authenticate('jwt',{session:false}), is_active,*/ validator(schema), existsOrder, nextOrder, addFrontPhoto, controller.create)
 router.get('/chapters', get_chapters)
 
-
 export default router
