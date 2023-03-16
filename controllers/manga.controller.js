@@ -39,7 +39,6 @@ const controller = {
         consultas.category_id = {$in:categ}
         pagination.limit = 10
     } 
- 
     if (req.query.page) {
       pagination.page = req.query.page
     }
@@ -69,9 +68,27 @@ const controller = {
     catch(err) {
       next(err)
     } 
-  } 
-  
-  
+  }, 
+
+  get_one: async (req, res, next) => {
+    let query = {}
+    if (req.query._id) { query._id = req.query._id }
+    try {
+      let one = await Manga.findById(query)
+        // .select("name -_id")
+      return res
+        .status(200)
+        .json({ 
+          mangas: {
+            title: one.title, 
+            decription: one.description, 
+            cover_photo: one.cover_photo,
+            category: one.category}})
+    }
+    catch(err) {
+      next(err)
+    }
+  }
 }
 
 export default controller

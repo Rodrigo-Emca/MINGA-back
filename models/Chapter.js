@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 let schema = new mongoose.Schema(
     {
@@ -11,6 +11,5 @@ let schema = new mongoose.Schema(
     }
 )
 
-let Chapther = mongoose.model('chapters', schema)
-
-export default Chapther
+let Chapter = mongoose.model('chapters', schema)
+export default Chapter

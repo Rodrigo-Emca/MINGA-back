@@ -9,6 +9,6 @@ let schema = new mongoose.Schema(
     }
 )
 
-let Category = mongoose.model("categories", schema)
 
+let Category = mongoose.model("categories", schema)
 export default Category

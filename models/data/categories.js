@@ -1,9 +1,4 @@
-import Category from "../Category.js";
-import 'dotenv/config.js'
-import '../../config/database.js'
-
-
-let categories = [
+export let categories = [
     {
         name: "shonen",
         detail: "Shonen manga are characterized by having a lot of action and often humorous situations with male protagonists."
@@ -18,5 +13,3 @@ let categories = [
         detail: "Japanese seinen tells stories with a mature tone."
     }
 ]
-﻿
-Category.insertMany(categories)

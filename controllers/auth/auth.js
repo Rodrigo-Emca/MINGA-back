@@ -69,17 +69,18 @@ const controller = {
         }
         },
 
-    signintoken: async (req, res, next) => {
+    token: async (req, res, next) => {
         let { user } = req
         try {
             req.body.success = true
             req.body.sc = 200
             req.body.data = { user }
-            return defaultResponse(req,res)
+            return res.status(200).json(user)
         } catch (error) {
             next(error)
         }
     },
 }
+
 
 export default controller

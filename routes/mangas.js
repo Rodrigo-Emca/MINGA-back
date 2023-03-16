@@ -11,10 +11,17 @@ let router = express.Router();
 const { show } = mostrar_categoriescontroller
 const { create } = create_manga
 const { get_mangas } = create_manga
+const { get_one } = create_manga
 
 router.get("/", show)
 //router.post("/", validator(mangaCreate),validator_title,is_active,create) //RUTA CON VALIDADOR DEL M06
 router.post("/", validator(schema),validator_title,create)
 router.get('/read', get_mangas)
+router.get('/:_id', get_one)
 
 export default router;
+
+
+//Para postman: 
+//http://localhost:8000/mangas/read?title= manga&category=d
+//http://localhost:8000/mangas/:id
