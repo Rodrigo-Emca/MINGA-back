@@ -1,10 +1,15 @@
 import Manga from '../../models/Manga.js';
 
 const is_property_of = async (req, res, next) => {
+  console.log(req.body)
   try {
-    const manga = await Manga.findById(req.params.mangaId);
-
-    if (!manga || String(manga.author) !== String(req.params.id)) {
+    const manga = await Manga.findById(req.body.manga_id);
+    if(!manga){
+      return res.status(404).json({
+        message: 'manga no existe'
+      })
+    }
+    if (String(manga.author_id) !== String(req.user._id)) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 

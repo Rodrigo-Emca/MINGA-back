@@ -11,11 +11,15 @@ const createAuthor = async (req, res) => {
     }
 
     // Crear un nuevo autor y guardarlo en la base de datos
-    const createdBy = req.user._id;
+    const createdBy = req.user.id;
     const author = new Author({
       name,
+      lastName,
+      city,
+      country,
       birthdate,
-      createdBy,
+      imageUrl,
+      // createdBy,
       active: true,
     });
     const savedAuthor = await author.save();

@@ -20,5 +20,6 @@ router.use('/auth', userRouter)
 router.use('/api/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 
+router.use('/auth', userRouter)
 
 export default router

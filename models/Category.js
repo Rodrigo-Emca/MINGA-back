@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 let schema = new mongoose.Schema(
     {
@@ -8,7 +8,6 @@ let schema = new mongoose.Schema(
         timestamps: true
     }
 )
-
 
 let Category = mongoose.model("categories", schema)
 export default Category
