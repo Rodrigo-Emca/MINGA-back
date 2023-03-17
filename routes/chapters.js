@@ -10,6 +10,6 @@ import passport from '../middlewares/auth/passport.js';
 import is_active from '../middlewares/auth/is_active.js'
 let router = express.Router();
 
-router.post('/',/*passport.authenticate('jwt',{session:false}), is_active,*/ validator(schema), existsOrder, nextOrder, addFrontPhoto, controller.create)
+router.post('/',passport.authenticate('jwt',{session:false}),/* is_active,*/ validator(schema), existsOrder, nextOrder, addFrontPhoto, controller.create)
 
 export default router

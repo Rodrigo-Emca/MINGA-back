@@ -1,10 +1,4 @@
-import User from "./../User.js";
-import 'dotenv/config.js'
-import '../../config/database.js'
-
-/* let users = [] */
-
-let users = [{
+export let users = [{
     mail: "alejandro@mh.com.ar",
     password: "$2a$10$XZBDuOYHcHSzZNzf2ws7Quvu3YmKgSagWRUG1eGlBLSdxJunpN1LC",
     is_author: true,
@@ -85,5 +79,3 @@ let users = [{
     is_online: false,
     photo: "https://i.postimg.cc/2jZbntSQ/image.png"
 }]
-
-User.insertMany(users)
