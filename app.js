@@ -5,6 +5,7 @@ import path from 'path'
 import logger from 'morgan'
 import indexRouter from './routes/index.js'
 import cors from 'cors'
+import errorHandler from './middlewares/errorHandler.js'
 import { __dirname } from './utils.js';
 
 let app = express();
@@ -20,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use('/', indexRouter);
+app.use(errorHandler)
 
 export default app

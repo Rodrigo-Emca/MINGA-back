@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 let schema = new mongoose.Schema(
+
     {
         manga_id:{ type:mongoose.Types.ObjectId, ref:'mangas', required:true },
         title: { type:String, required:true },
@@ -11,6 +12,5 @@ let schema = new mongoose.Schema(
     }
 )
 
-let Chapther = mongoose.model('chapters', schema)
-
-export default Chapther
+let Chapter = mongoose.model('chapters', schema)
+export default Chapter
