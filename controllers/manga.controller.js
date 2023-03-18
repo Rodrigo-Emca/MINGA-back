@@ -20,6 +20,7 @@ const controller = {
       });
     }
   },
+
   get_mangas: async (req, res, next) => {
 
     let consultas = {}
@@ -86,16 +87,46 @@ const controller = {
   },
 
   get_me: async (req, res, next) => {
-    try {
+          try {
+              let order = { title: 1 }
+              if (req.query.order == 1 || req.query.order == -1) {
+                  order.title = req.query.order
+              }
 
-      return res
-        .status(200)
-        .json({ })
-    }
-    catch(err) {
-      next(err)
-    }
-  },
+              let pagination = { page: 1, limit: 6 }
+              if (req.query.page) {
+                  pagination.page = Number(req.query.page)
+              }
+
+              let query = {}
+              query.author_id = req.body.author_id
+
+              let mangas = await Manga.find(query)
+                  .select("title author_id category_id cover_photo _id")
+                  .sort(order)
+                  .skip( pagination.page > 0 ? (pagination.page-1)*pagination.limit : 0 )
+                  .limit(pagination.limit > 0 ? pagination.limit : 0)
+                  .populate("category_id", "name -_id")
+                  
+              if(mangas){
+                  return res.status(200).json({
+                      success: true,
+                      mangas
+                  })
+              }else{
+                  return res.status(404).json({
+                      success: false,
+                      message: "No se han encontrado mangas."
+                  })
+              }
+          }catch(error){
+              next(error)
+      }
+    },
+
+    //Agregar controlador UPDATE
+
+    //Agregar controlador DESTROY
 }
 
 export default controller

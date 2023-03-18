@@ -21,6 +21,10 @@ router.get("/", show)
 router.post("/", validator(schema),validator_title,create)
 router.get('/read', get_mangas)
 router.get('/me', passport.authenticate('jwt',{session:false}), finds_id, get_me)
+//ENRUTADOR PARA ACTUALIZAR UN MANGA
+
+//ENRUTADOR PARA ELIMINAR UN MANGA
+
 router.get('/:_id', get_one)
 
 export default router;
@@ -29,3 +33,4 @@ export default router;
 //Para postman: 
 //http://localhost:8000/mangas/read?title= manga&category=d
 //http://localhost:8000/mangas/:id
+//http://localhost:8000/mangas/me
