@@ -14,4 +14,4 @@ let schema = new mongoose.Schema(
 )
 
 
-export const Company = mongoose.model('companies',schema)
+export const Company = mongoose.model('companies', schema)

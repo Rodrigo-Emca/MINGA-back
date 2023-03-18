@@ -52,11 +52,6 @@ const controller = {
       .skip( pagination.page > 0 ? (pagination.page-1)*pagination.limit : 0 )
       .limit( pagination.limit > 0 ? pagination.limit : 0 )
       .populate("category_id", "name -_id")
-      
-     /*  populate({
-        path: 'category_id',
-        match: {name: 'shonen'}
-      }) */
 
       return res.status(200).json({ 
         success: true,
@@ -88,7 +83,19 @@ const controller = {
     catch(err) {
       next(err)
     }
-  }
+  },
+
+  get_me: async (req, res, next) => {
+    try {
+
+      return res
+        .status(200)
+        .json({ })
+    }
+    catch(err) {
+      next(err)
+    }
+  },
 }
 
 export default controller

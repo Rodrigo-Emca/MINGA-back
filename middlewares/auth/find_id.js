@@ -1,7 +1,7 @@
-import User from '../../models/User';
-import Author from '../models/Author'; 
+import User from '../../models/User.js';
+import Author from '../../models/Author.js'
 
-exports.finds_id = async (req, res, next) => {
+async function finds_id(req,res,next) {
     try {
         const user = await User.findById(req.body.user._id);
         if (!user) {
@@ -24,4 +24,6 @@ exports.finds_id = async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-};
+}
+
+export default finds_id
