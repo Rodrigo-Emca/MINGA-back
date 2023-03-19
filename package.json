@@ -8,7 +8,8 @@
     "data_data": "node ./models/data/data",
     "data_users": "node ./models/data/users",
     "data_categories": "node ./models/data/categories",
-    "data_companies": "node ./models/data/companies"
+    "data_companies": "node ./models/data/companies",
+    "data_mangas": "node ./models/data/mangas_v1"
   },
   "type": "module",
   "dependencies": {

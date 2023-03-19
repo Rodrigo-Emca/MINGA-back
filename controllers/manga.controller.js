@@ -1,5 +1,5 @@
 import Manga from '../models/Manga.js'
-
+import Chapter from '../models/Chapter.js'
 
 const controller = {
   create: async (req, res) => {
@@ -148,9 +148,34 @@ const controller = {
       }catch(error){
           next(error)
       }
-  }
+  },
 
     //Agregar controlador DESTROY
+    destroy: async (req,res,next) => {
+      try{
+          let {id} = req.params
+          let manga = await Manga.findOneAndDelete(
+              { _id: id }
+          )
+          if(manga){
+              await Chapter.deleteMany(
+                  {manga_id: req.params.id}
+              )
+
+              return res.status(200).json({
+                  success: true,
+                  message: "El Manga ha sido eliminado",
+              })
+          }else{
+              return res.status(404).json({
+                  success: false,
+                  message: "El Manga no ha sido encontrado"
+              })
+          }
+      }catch(error){
+          next(error)
+      }
+  }
 }
 
 export default controller

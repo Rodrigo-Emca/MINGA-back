@@ -19,6 +19,7 @@ const { get_mangas } = create_manga
 const { get_one } = create_manga
 const { get_me } = create_manga
 const { update } = create_manga
+const { destroy } = create_manga
 
 
 router.get("/", show)
@@ -30,7 +31,7 @@ router.get('/me', passport.authenticate('jwt',{session:false}), finds_id, get_me
 router.put('/:id', passport.authenticate('jwt', { session: false }), validator(updateSchema),finds_id, is_active, is_property_of, update)
 
 //ENRUTADOR PARA ELIMINAR UN MANGA
-//router.delete('/:id', passport.authenticate('jwt', { session: false }), finds_id, is_active, is_property_of, destroy)
+router.delete('/:id', passport.authenticate('jwt', { session: false }), finds_id, is_active, is_property_of, destroy)
 
 router.get('/:_id', get_one)
 
