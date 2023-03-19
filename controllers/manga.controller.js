@@ -125,6 +125,30 @@ const controller = {
     },
 
     //Agregar controlador UPDATE
+    update: async (req,res,next) => {
+      try{
+          let { id } = req.params
+          let manga = await Manga.findOneAndUpdate(
+              {_id: id},
+              req.body,
+              {new: true} //optional
+          )
+          if(manga){
+              return res.status(200).json({
+                  success: true,
+                  message: "Updated",
+                  manga
+              })
+          }else{
+              return res.status(404).json({
+                  success: false,
+                  message: "Manga no encontrado"
+              })
+          }
+      }catch(error){
+          next(error)
+      }
+  }
 
     //Agregar controlador DESTROY
 }
