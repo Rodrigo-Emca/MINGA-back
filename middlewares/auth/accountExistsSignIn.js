@@ -6,7 +6,7 @@ async function accountExistsSignIn(req,res,next) {
         req.user = {
             name: user.name,
             id: user._id,
-            email: user.email,
+            mail: user.mail,//email: user.email,
             photo: user.photo,
             password: user.password,
             is_admin: user.is_admin,

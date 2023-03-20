@@ -1,9 +1,10 @@
-import User from '../../models/User';
-import Author from '../models/Author'; 
+//ok de Rodrigo
+import User from '../../models/User.js';
+import Author from '../../models/Author.js'
 
-exports.finds_id = async (req, res, next) => {
+async function finds_id(req,res,next) {
     try {
-        const user = await User.findById(req.body.user._id);
+        const user = await User.findById(req.user._id);
         if (!user) {
             return res.status(400).json({
                 success: false,
@@ -11,7 +12,7 @@ exports.finds_id = async (req, res, next) => {
                 })
         }
 
-        const author = await Author.findOne({ user: user._id });
+        const author = await Author.findOne({ user_id: req.user.id });
         if (!author) {
             return res.status(400).json({
                 success: false,
@@ -19,9 +20,15 @@ exports.finds_id = async (req, res, next) => {
                 })
         }
 
-        req.body.author_id = author._id;
+        req.body.author_id = user._id;
+        console.log('Pasó el find_id con exito')
         next();
     } catch (err) {
+        console.log('No ha pasado el finds_id')
         next(err);
     }
-};
+}
+
+export default finds_id
+
+

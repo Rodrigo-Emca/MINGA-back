@@ -3,7 +3,7 @@ import Author from '../../models/Author.js';
 const is_active = async (req, res, next) => {
   try {
     const author = await Author.findById(req.params.id);
-console.log('author', author)
+    console.log('author', author)
     if (!author || !author.active) {
       return res.status(404).json({ message: 'Author not found or inactive' });
 
@@ -18,3 +18,4 @@ console.log('author', author)
 };
 
 export default is_active;
+
