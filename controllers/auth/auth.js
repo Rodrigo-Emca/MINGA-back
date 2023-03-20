@@ -6,6 +6,7 @@ import jsonwebtoken from 'jsonwebtoken'
 const controller = {
 
     sign_up: async (req, res, next) => {
+        req.body.name = false
         req.body.is_online = false
         req.body.is_admin = false
         req.body.is_author = false

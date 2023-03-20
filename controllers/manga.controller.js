@@ -100,7 +100,7 @@ const controller = {
 
               let query = {}
               query.author_id = req.body.author_id
-
+              console.log(req.body.author_id)
               let mangas = await Manga.find(query)
                   .select("title author_id category_id cover_photo _id")
                   .sort(order)
