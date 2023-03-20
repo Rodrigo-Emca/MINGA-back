@@ -83,7 +83,7 @@ const controller = {
             title: one.title, 
             decription: one.description, 
             cover_photo: one.cover_photo,
-            category: one.category}})
+            category: one.category_id}})
     }
     catch(err) {
       next(err)

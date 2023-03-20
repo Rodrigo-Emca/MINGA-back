@@ -1,7 +1,7 @@
 import Joi from 'joi-oid'
 
 const schema = Joi.object({
-    email: Joi
+    mail: Joi
         .string()
         .required()
         .email({minDomainSegments: 2})

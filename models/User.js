@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const schema = new mongoose.Schema(
     {
-        email: { type: String, require: true },
+        mail: { type: String, require: true },
         password: { type: String, require: true },
         photo: { type: String, require: true },
         is_online: { type: Boolean, require: true },
