@@ -7,8 +7,8 @@ const schema = new mongoose.Schema(
         photo: { type: String, require: true },
         is_online: { type: Boolean, require: true },
         is_admin: { type: Boolean, require: true },
-        is_author: { type: Boolean, require: true },//false---f?
-        is_company: { type: Boolean, require: true },//false---f?
+        is_author: { type: Boolean, require: false },//is_author: { type: Boolean, require: true },
+        is_company: { type: Boolean, require: false },// is_company: { type: Boolean, require: true },
         is_verified: { type: Boolean, require: true },
         verify_code: { type: String, require: true }
     },{

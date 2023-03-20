@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+/* import mongoose from "mongoose";
 
 const DB_URI = process.env.MONGO;
 
@@ -13,3 +13,11 @@ mongoose.connect(DB_URI, {
 });
 
 export default mongoose.connection;
+ */
+
+import mongoose from "mongoose";
+
+mongoose.set('strictQuery', false)
+mongoose.connect(process.env.MONGO)
+    .then(() => console.log('database connected'))
+    .catch(err => console.log(err))

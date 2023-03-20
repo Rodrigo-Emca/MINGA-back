@@ -11,7 +11,7 @@ const schema = Joi.object({
     mail: Joi// email: Joi
         .string()
         .required()
-        .email({minDomainSegments: 2})
+        .email({minDomainSegments: 2})//.email({minDomainSegments: 2})
         .messages({
             'any.required': 'No se ha ingresado un mail válido',
             'string.empty': 'No se ha ingresado ningún mail.',
