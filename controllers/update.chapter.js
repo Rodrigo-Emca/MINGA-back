@@ -23,7 +23,7 @@ const controllerUp = {
         }
     }
     catch(error){
-        nextOrder(error)
+        next(error)
     }
 }
 }
