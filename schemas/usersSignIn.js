@@ -1,14 +1,14 @@
 import Joi from 'joi-oid'
 
 const schema = Joi.object({
-    email: Joi
+    mail: Joi
         .string()
         .required()
         .email({minDomainSegments: 2})
         .messages({
             'any.required': 'No se ha ingresado un mail válido',
             'string.empty': 'No se ha ingresado ningún mail.',
-            'string.email': 'El mail ingresado es inválido.'
+            'string.mail': 'El mail ingresado es inválido.'
         }),
     password: Joi
         .string()

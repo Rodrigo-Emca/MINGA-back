@@ -17,3 +17,4 @@ const schema = new mongoose.Schema(
 
 const Author = mongoose.model('authors', schema)
 export default Author
+//export const Author = mongoose.model('authors',schema)

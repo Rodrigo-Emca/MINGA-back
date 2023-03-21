@@ -13,7 +13,7 @@ passport.use(
             let user = await User.findOne({_id:jwt_payload.id})
             console.log(user)
             if (user) {
-                user = {_id: user._id, name: user.name, email: user.email, photo: user.photo, is_online: user.is_online, is_admin: user.is_admin, is_author: user.is_author,  is_company: user.is_company, is_verified: user.is_verified}
+                user = {_id: user._id, name: user.name, mail: user.mail, photo: user.photo, is_online: user.is_online, is_admin: user.is_admin, is_author: user.is_author,  is_company: user.is_company, is_verified: user.is_verified}
                 return done(null, user)
             } else {
                 return done(null, false)

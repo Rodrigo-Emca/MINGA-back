@@ -16,8 +16,7 @@ const { get_chapters } = getchapters
 
 let router = express.Router();
 
-router.get('/:id', controllerChapter.chapter)
-
 router.post('/', passport.authenticate('jwt',{session:false}), /*is_active,*/ validator(schema), is_property_of, existsOrder, nextOrder, addFrontPhoto, controller.create)
-
+router.get('/chapters', get_chapters)
+router.get('/:id', controllerChapter.chapter)
 export default router

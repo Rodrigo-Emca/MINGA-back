@@ -6,6 +6,7 @@ import jsonwebtoken from 'jsonwebtoken'
 const controller = {
 
     sign_up: async (req, res, next) => {
+        req.body.name = false
         req.body.is_online = false
         req.body.is_admin = false
         req.body.is_author = false
@@ -28,7 +29,7 @@ const controller = {
     sign_in: async (req, res, next) => {
         try {
             let user = await User.findOneAndUpdate(
-                { email: req.user.email },
+                { mail: req.user.mail },
                 { is_online: true },
                 { new: true }
             )
@@ -42,7 +43,7 @@ const controller = {
                 success: true,
                 message: '¡Usuario online!',
                 name: req.user.name, 
-                email: req.user.email, 
+                mail: req.user.mail, 
                 photo: req.user.photo,
                 token: token
             })
@@ -53,10 +54,10 @@ const controller = {
 
     sign_out: async (req, res, next) => {
         console.log(req.user)
-        const { email } = req.user
+        const { mail } = req.user
         try {
             await User.findOneAndUpdate(
-            { email },
+            { mail },
             { is_online: false },
             { new: true }
             )
