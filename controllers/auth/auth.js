@@ -38,7 +38,7 @@ const controller = {
             const token = jsonwebtoken.sign(
                 {id: user.id},
                 process.env.SECRET,
-                {expiresIn: 60*60*48*7}// {expiresIn: 60*60*24*7}-->para tiempo de expiracion token
+                {expiresIn: 60*60*24*7}
                 )
             return res.status(200).json({
                 success: true,
