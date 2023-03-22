@@ -39,7 +39,6 @@ router.get('/:_id', get_one)
 
 export default router;
 
-
 //Para postman: 
 //http://localhost:8000/mangas/read?title= manga&category=d
 //http://localhost:8000/mangas/:id
