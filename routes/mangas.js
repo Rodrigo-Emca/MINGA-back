@@ -29,7 +29,8 @@ router.get('/read', get_mangas)
 ////ENRUTADOR PARA VER MANGAS DE MI AUTORIA
 router.get('/me', passport.authenticate('jwt',{session:false}), finds_id, get_me)
 //ENRUTADOR PARA ACTUALIZAR UN MANGA
-router.put('/:id', passport.authenticate('jwt', { session: false }), validator(updateSchema),finds_id, is_active, is_property_of, update)
+//router.put('/:id', passport.authenticate('jwt', { session: false }), validator(updateSchema),finds_id, is_active, is_property_of, update)
+router.put('/:id', passport.authenticate('jwt', { session: false }), validator(updateSchema), update)
 
 //ENRUTADOR PARA ELIMINAR UN MANGA
 router.delete('/:id', passport.authenticate('jwt', { session: false }), finds_id, is_active, is_property_of, destroy)
