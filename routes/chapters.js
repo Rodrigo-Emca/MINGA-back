@@ -25,7 +25,7 @@ router.get('/:id', controllerChapter.chapter)
 
 router.put('/:id',  passport.authenticate('jwt',{session:false}), /*is_active,*/ controllerUp.update)
 
-router.delete('/:id', passport.authenticate('jwt',{session:false}), is_active, controllerD.destroy)
+router.delete('/:id', /*passport.authenticate('jwt',{session:false}), is_active,*/ controllerD.destroy)
 
 export default router
 /*
