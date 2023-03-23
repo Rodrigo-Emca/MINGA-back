@@ -67,19 +67,19 @@ const controller = {
   }, 
 
   get_one: async (req, res, next) => {
-    let query = {}
-    if (req.query._id) { query._id = req.query._id }
+    // let query = {}
+    // if (req.query._id) { query._id = req.query._id }
     try {
-      let one = await Manga.findById(query)
+      let one = await Manga.findById(/*query*/ req.params._id)
         // .select("name -_id")
       return res
         .status(200)
         .json({ 
           mangas: {
-            title: one.title, 
-            decription: one.description, 
-            cover_photo: one.cover_photo,
-            category: one.category}})
+            title: one?.title, 
+            decription: one?.description, 
+            cover_photo: one?.cover_photo,
+            category: one?.category_id}})
     }
     catch(err) {
       next(err)
