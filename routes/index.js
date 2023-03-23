@@ -22,3 +22,4 @@ router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
 
 export default router
+

@@ -30,11 +30,5 @@ const schema = Joi.object({
 
 export default schema
 
-/* 
-{
- "title": "prueba 1",
- "cover_photo": "manguita.png",
- "description": "bla bla",
- "category_id":"63fe8112f09373806fd89fe5"
-} */
+
 

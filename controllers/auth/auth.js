@@ -27,15 +27,17 @@ const controller = {
         },
 
     sign_in: async (req, res, next) => {
+        console.log(req.user)
         try {
             let user = await User.findOneAndUpdate(
                 { mail: req.user.mail },
                 { is_online: true },
                 { new: true }
             )
+            console.log(user)
             user.password = null
             const token = jsonwebtoken.sign(
-                {id: user._id},
+                {id: user.id},
                 process.env.SECRET,
                 {expiresIn: 60*60*24*7}
                 )
