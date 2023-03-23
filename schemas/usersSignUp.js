@@ -15,7 +15,7 @@ const schema = Joi.object({
         .messages({
             'any.required': 'No se ha ingresado un mail válido',
             'string.empty': 'No se ha ingresado ningún mail.',
-            'string.email': 'El mail ingresado es inválido.'
+            'string.mail': 'El mail ingresado es inválido.'
         }),
     photo: Joi
         .string()

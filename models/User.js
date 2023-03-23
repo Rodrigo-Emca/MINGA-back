@@ -18,3 +18,4 @@ const schema = new mongoose.Schema(
 
 let User = mongoose.model('users', schema)
 export default User
+// export const User = mongoose.model('users',schema)

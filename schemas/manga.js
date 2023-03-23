@@ -21,9 +21,9 @@ const schema = Joi.object({
         .messages({
             'string.min': 'minimo 3 caracteres',
         }),
-        category: Joi
-        .string()
-        .required()
+    category: Joi
+    .string()
+    .required()
 
 
 })
