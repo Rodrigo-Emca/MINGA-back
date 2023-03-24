@@ -25,6 +25,7 @@ const schema = Joi.object({
   active: Joi.boolean().required().messages({
     invalid: "Not a Boolean",
   }),
+
 });
 
 export default schema;

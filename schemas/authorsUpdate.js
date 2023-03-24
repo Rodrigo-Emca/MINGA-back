@@ -1,6 +1,7 @@
-import Joi from 'joi';
+import Joi from 'joi-oid';
+
 const schema = Joi.object({
-    name: Joi.string().required().min(3).max(15).messages({
+    name: Joi.string().min(3).max(15).messages({
         "string.min": "The name must have at least 3 characters",
         "string.max": "The name must have a maximum of 15 characters",
     }),
@@ -26,6 +27,12 @@ const schema = Joi.object({
     active: Joi.boolean().messages({
         invalid: "Not a Boolean",
     }),
+    user_id: Joi.objectId().messages({
+            'invalid': 'user_id is not an objectId'
+    }),
+       
 });
+    
+
 
 export default schema;

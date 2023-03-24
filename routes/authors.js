@@ -22,8 +22,8 @@ const { update } = upDateController;
 router.get('/', getAllAuthors);
 router.post('/create', passport.authenticate('jwt',{session:false}), validator(postSchema), createAuthor);
 
-router.get("/me", passport.authenticate("jwt", {session: false}),find_id, getMe);
-router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate), find_id, is_active , update );
+router.get("/me", passport.authenticate("jwt", {session: false})/* ,find_id, */, getMe);
+router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate),/*  find_id, */ is_active , update );
 
 
 export default router;

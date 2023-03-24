@@ -8,10 +8,10 @@ const schema = Joi.object({
         .messages({
             'string.min':'El nombre debe tener un minimo de 4 caracteres.'
         }),
-    mail: Joi// email: Joi
+    mail: Joi
         .string()
         .required()
-        .email({minDomainSegments: 2})//.email({minDomainSegments: 2})
+        .email({minDomainSegments: 2})
         .messages({
             'any.required': 'No se ha ingresado un mail válido',
             'string.empty': 'No se ha ingresado ningún mail.',
