@@ -18,12 +18,5 @@ async function is_active(req,res,next){
         })
     }
 }
-<<<<<<< HEAD
 
 export default is_active
-
-
-=======
-
-export default is_active
->>>>>>> 26a02d89ad3f2c977e791b93d219bc1d68ac7020
