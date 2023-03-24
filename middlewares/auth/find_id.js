@@ -1,4 +1,3 @@
-//ok de Rodrigo
 import User from '../../models/User.js';
 import Author from '../../models/Author.js'
 
@@ -12,15 +11,15 @@ async function finds_id(req,res,next) {
                 })
         }
 
-        const author = await Author.findOne({ user_id: req.user.id });
+        const author = await Author.findOne({ user_id: user._id });
         if (!author) {
             return res.status(400).json({
                 success: false,
                 message: 'El usuario no es un autor.'
                 })
         }
-
-        req.body.author_id = user._id;
+        console.log(author)
+        req.body.author_id = author._id;
         console.log('Pasó el find_id con exito')
         next();
     } catch (err) {
@@ -30,5 +29,3 @@ async function finds_id(req,res,next) {
 }
 
 export default finds_id
-
-
