@@ -9,7 +9,7 @@ describe('Pruebas sobre MANGAS', () => {
 
     it('GET /mangas verificar que se pasa token por headers', async () => {
 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGEyOWQ2YWE5MTRkNmI3YzU4NDZmMyIsImlhdCI6MTY3OTM2MDU1MywiZXhwIjoxNjc5OTY1MzUzfQ.X3f6WaO1Eb_ZvpZuQrUHXbKiuZ8r8laOF4B2ATURcck'
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIwNTc3MTg4ZWMwYzE0MzE5OWRkNSIsImlhdCI6MTY3OTUxMDMzNiwiZXhwIjoxNjgwMTE1MTM2fQ.xYl3Z0LJhtuMDVUvmGxYET-fB3F0lt6UqqlHV0KDyYE'
 
         const response = await request(app)
             .get('/mangas/read')
