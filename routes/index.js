@@ -2,6 +2,7 @@ import userRouter from './users.js'
 import chaptersRouter from './chapters.js'
 import authorRouter from './authors.js';
 import mangaRouter from './mangas.js'
+import paymentRouter from './payment.js'
 
 
 
@@ -20,6 +21,6 @@ router.use('/auth', userRouter)
 router.use('/api/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
+router.use('/payment', paymentRouter)
 
 export default router
-
