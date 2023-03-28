@@ -11,7 +11,6 @@ router.post('/', passport.authenticate('jwt',{session:false}), (req, res) => {
 
     let preference = {
         items: [{
-            // id: 123,
             title: donat.title,
             currency_id: 'ARS',
             picture_url: donat.image,
@@ -22,7 +21,7 @@ router.post('/', passport.authenticate('jwt',{session:false}), (req, res) => {
         }],
         back_urls: {
             success: 'http://localhost:3000',
-            failure: '',
+            failure: 'http://localhost:3000',
             pending: '',
         },
         auto_return: 'approved',
