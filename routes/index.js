@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.use('/users', userRouter)
 router.use('/chapters', chaptersRouter)
 router.use('/auth', userRouter)
-router.use('/api/authors', authorRouter);
+router.use('/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
 
