@@ -1,4 +1,4 @@
-import  {Company} from '../../models/Company.js'
+import  Company from '../../models/Company.js'
 import  User  from '../../models/User.js'
 
 const controller = {
@@ -17,7 +17,7 @@ const controller = {
             next(error)
         }
     },
-    read_allActive: async (req, res, next) => {
+    read_all_active: async (req, res, next) => {
         try {
             let companyActive = await Company.find({ active: true })
             let companyInactive = await Company.find({ active: false })
@@ -48,7 +48,7 @@ const controller = {
             next(error);
         }
     },
-    update: async (req, res, next) => {
+    update_active: async (req, res, next) => {
         try {
             let company = await Company.findOneAndUpdate(
                 { _id: req.params.id },

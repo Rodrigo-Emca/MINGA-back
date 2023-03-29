@@ -14,20 +14,21 @@ import updateActive from '../controllers/authors/update_active.js'
 
 const router = express.Router();
 
-const {getMe } = get_authors;
-const { update } = upDateController;
 const { create } = controller
-const { read_one } = readOne
-const { read_all_active } = readActive
+const { get_one } = readOne
+const {get_me } = get_authors;
+const { update } = upDateController;
 const { update_active } = updateActive
+const { read_all_active } = readActive
+
 
 
 router.post('/', passport.authenticate('jwt',{session:false}), validator(postSchema), create);
-router.get("/me", passport.authenticate("jwt", {session: false}) , find_id, getMe);
+router.get("/me", passport.authenticate("jwt", {session: false}) , find_id , get_me);
 router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate), find_id, is_active , update );
-router.get('/:id', read_one )
+router.get('/:id', get_one )
 
-router.put('/admin/prueba/:id',passport.authenticate("jwt", {session: false}),  update_active)
+router.put('/admin/:id',passport.authenticate("jwt", {session: false}),  update_active)
 router.get('/admin/prueba' ,passport.authenticate("jwt", {session: false}), read_all_active)
 
 

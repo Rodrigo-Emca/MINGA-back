@@ -1,7 +1,7 @@
 import Author from "../../models/Author.js";
 
 const controller = {
-    getMe: async (req, res) => { 
+    get_me: async (req, res) => {
         try {
             let me = await Author.findOne({ user_id:req.user })
                 .select("name city country date photo ")
@@ -23,5 +23,6 @@ const controller = {
 };
 
 export default controller
+
 
 
