@@ -2,9 +2,7 @@ import userRouter from './users.js'
 import chaptersRouter from './chapters.js'
 import authorRouter from './authors.js';
 import mangaRouter from './mangas.js'
-import paymentRouter from './payment.js'
-
-
+import companiesRouter from './companies.js'
 
 import express from 'express';
 let router = express.Router();
@@ -19,8 +17,11 @@ router.use('/users', userRouter)
 router.use('/chapters', chaptersRouter)
 router.use('/auth', userRouter)
 router.use('/authors', authorRouter);
+router.use('/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
-router.use('/payment', paymentRouter)
+router.use('/companies',companiesRouter)
+
 
 export default router
+
