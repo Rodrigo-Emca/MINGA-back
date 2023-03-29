@@ -17,6 +17,7 @@ router.use('/users', userRouter)
 router.use('/chapters', chaptersRouter)
 router.use('/auth', userRouter)
 router.use('/authors', authorRouter);
+router.use('/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
 router.use('/companies',companiesRouter)

@@ -1,4 +1,5 @@
 import Joi from "joi-oid";
+import Joi from "joi-oid";
 
 const schema = Joi.object({
   name: Joi.string().required().min(3).max(20).messages({
