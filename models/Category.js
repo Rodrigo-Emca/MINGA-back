@@ -12,4 +12,3 @@ let schema = new mongoose.Schema(
 let Category = mongoose.model("categories", schema)
 export default Category
 
-//export const Category = mongoose.model('categories', schema)
