@@ -2,8 +2,7 @@ import userRouter from './users.js'
 import chaptersRouter from './chapters.js'
 import authorRouter from './authors.js';
 import mangaRouter from './mangas.js'
-
-
+import companiesRouter from './companies.js'
 
 import express from 'express';
 let router = express.Router();
@@ -20,6 +19,8 @@ router.use('/auth', userRouter)
 router.use('/api/authors', authorRouter);
 router.use('/mangas', mangaRouter)
 router.use('/auth', userRouter)
+router.use('/companies',companiesRouter)
+
 
 export default router
 

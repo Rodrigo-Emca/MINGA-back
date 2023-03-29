@@ -15,4 +15,3 @@ let schema = new mongoose.Schema(
 );
 let Manga = mongoose.model("mangas", schema);
 export default Manga;
-//export const Manga = mongoose.model('mangas', schema)

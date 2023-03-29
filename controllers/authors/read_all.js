@@ -1,8 +1,9 @@
 import Author from '../../models/Author.js'
+
 const controller = {
     read_all: async (req, res, next) => {
         try{
-            let author = await Author.find().select("name last_name -_id")
+            let author = await Author.find()
             if(author){
                 return res.status(200).json({
                     success: true,
@@ -18,3 +19,4 @@ const controller = {
 }
 
 export default controller
+
