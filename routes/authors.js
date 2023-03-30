@@ -16,7 +16,9 @@ const router = express.Router();
 
 const { create } = controller
 const { get_one } = readOne
-const { getMe } = get_authors;
+
+const {get_me, getMe } = get_authors;
+
 const { update } = upDateController;
 const { update_active } = updateActive
 const { read_all_active } = readActive
