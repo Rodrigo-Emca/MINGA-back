@@ -1,7 +1,6 @@
 import express from 'express';
 import validator from '../middlewares/authors/validator.js';
 import passport from '../middlewares/auth/passport.js';
-import passport from '../middlewares/auth/passport.js';
 import postSchema from '../schemas/authors.js';
 import schemaUpdate from '../schemas/authorsUpdate.js';
 import find_id from '../middlewares/auth/find_id.js'
