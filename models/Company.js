@@ -1,16 +1,29 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-let schema = new mongoose.Schema(
+const schema = new mongoose.Schema(
     {
-        name: { type: String, required: true },
-        logo: { type: String, required: true },
-        website: { type: String, required: true },
-        description: { type: String, required: true },
-        user_id: { type: mongoose.Types.ObjectId, ref: 'users', required: true }
-    },{
-        timestamps: true
+      name: { type: String, required: true },
+      logo: { type: String, required: true },
+      website: { type: String, required: true },
+      description: { type: String, required: true },
+      user_id: { type: mongoose.Types.ObjectId, ref: "users", required: true },
+      active: { type: Boolean, required: false },
+    },
+    {
+      timestamps: true,
     }
-)
+  );
 
+const Company = mongoose.model("companies", schema);
 
-export const Company = mongoose.model('companies', schema)
+export default Company;
+
+/* 
+{
+    "name":"pruebassss" ,
+    "logo":"pruebassss" ,
+    "website":"www.pruebassss.com.ar" ,
+    "description":"pruebassss pruebassss pruebassss",
+    "user_id":"641b0577188ec0c143199dd8" 
+}
+*/
