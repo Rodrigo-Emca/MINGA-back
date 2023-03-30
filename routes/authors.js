@@ -16,7 +16,7 @@ const router = express.Router();
 
 const { create } = controller
 const { get_one } = readOne
-const { get_me } = get_authors;
+const { getMe } = get_authors;
 const { update } = upDateController;
 const { update_active } = updateActive
 const { read_all_active } = readActive
@@ -24,7 +24,7 @@ const { read_all_active } = readActive
 
 
 router.post('/', passport.authenticate('jwt',{session:false}), validator(postSchema), create);
-router.get("/me", passport.authenticate("jwt", {session: false}) , find_id , get_me);
+router.get("/me", passport.authenticate("jwt", {session: false}) , find_id , getMe);
 router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate), find_id, is_active , update );
 router.get('/:id', get_one )
 
