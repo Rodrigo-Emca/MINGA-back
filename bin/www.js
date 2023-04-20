@@ -1,8 +1,3 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
 import app from '../app.js'
 import debug from 'debug';
 const logger = debug('sprint-1-back:server')
@@ -12,7 +7,7 @@ import http from 'http'
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '8000');
 app.set('port', port);
 
 /**
